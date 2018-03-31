@@ -246,10 +246,6 @@ extension Section: MutableCollection, BidirectionalCollection {
     public func index(after i: Int) -> Int { return i + 1 }
     public func index(before i: Int) -> Int { return i - 1 }
 
-}
-
-extension Section: RangeReplaceableCollection {
-
     // MARK: RangeReplaceableCollectionType
 
     public func append(_ formRow: BaseRow) {

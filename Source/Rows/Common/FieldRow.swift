@@ -232,11 +232,7 @@ open class _FieldCell<T> : Cell<T>, UITextFieldDelegate, TextFieldCell where T: 
         textField.textColor = row.isDisabled ? .gray : .black
         textField.font = .preferredFont(forTextStyle: .body)
         if let placeholder = (row as? FieldRowConformance)?.placeholder {
-            if let color = (row as? FieldRowConformance)?.placeholderColor {
-                textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedStringKey.foregroundColor: color])
-            } else {
-                textField.placeholder = (row as? FieldRowConformance)?.placeholder
-            }
+            textField.placeholder = (row as? FieldRowConformance)?.placeholder
         }
         if row.isHighlighted {
             textLabel?.textColor = tintColor
@@ -388,8 +384,8 @@ open class _FieldCell<T> : Cell<T>, UITextFieldDelegate, TextFieldCell where T: 
     private func setupTitleLabel() {
         titleLabel = self.textLabel
         titleLabel?.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel?.setContentHuggingPriority(UILayoutPriority(rawValue: 500), for: .horizontal)
-        titleLabel?.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+        titleLabel?.setContentHuggingPriority(UILayoutPriority(500), for: .horizontal)
+        titleLabel?.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .horizontal)
     }
 
     private func displayValue(useFormatter: Bool) -> String? {

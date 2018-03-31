@@ -84,7 +84,7 @@ extension InlineRowType where Self: BaseRow, Self.Cell.Value ==  Self.InlineRow.
             }
             if let indexPath = indexPath {
                 _inlineRow = inline
-                section.insert(inline, at: indexPath.row + 1)
+                section.append(inline)
                 cell.formViewController()?.makeRowVisible(inline, destinationScrollPosition: destinationScrollPosition)
             }
         }
